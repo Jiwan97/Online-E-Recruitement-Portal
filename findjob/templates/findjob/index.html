@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    <title>Job Finder</title>
+{% endblock%}
+
+
+{% block content %}
+    <div class="main-banner header-text">
+      <div class="container-fluid">
+        <div class="owl-banner owl-carousel">
+          {% for i in vacancies|slice:":7" %}
+          <div class="item">
+            <img style="height:300px;" src="{{i.pic}}" alt="">
+
+            <div class="item-content">
+              
+              <div class="main-content">
+                <div class="meta-category">
+                  <span>Salary: Rs {{i.salary}}</span>
+                </div>
+
+                <a href="/jobform/{{i.id}}"><h4>{{i.job}}</h4></a>
+
+                <ul class="post-info">
+
+                  <li><i class="fa fa-user"></i> Total Vacancy: {{i.totalVacancy}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- Banner Ends Here -->
+
+    <section class="blog-posts grid-system">
+      <div class="container">
+        <div class="all-blog-posts">
+          <h2 class="text-center">Featured Jobs</h2>
+          <br>
+          <div class="row">
+            {% for i in vacancies|slice:":3" %}
+            <div class="col-md-4 col-sm-6">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img style="height:300px;" src="{{i.pic}}" alt="">
+
+                </div>
+                <div class="down-content">
+                  <span>Salary: Rs {{i.salary}}</span>
+                  <a href="/jobform/{{i.id}}"><h4>{{i.job}}</h4></a>
+                  <p>{{i.features}}</p>
+                  <div class="post-options">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <ul class="post-tags">
+                          <li><i class="fa fa-bullseye"></i></li>
+                          <li><a href="/jobform/{{i.id}}">Apply for Job</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="main-content">
+              <div class="row">
+                <div class="col-lg-8">
+                  <span>Need us to answer your question?</span>
+                  <h4>You can message us for more information</h4>
+                </div>
+                <div class="col-lg-4">
+                  <div class="main-button">
+                    <a href="/contact">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="blog-posts">
+      <div class="container">
+        <div class="sidebar-item comments">
+            <h2 class="text-center">Testimonials</h2>
+          <br>
+          <br>
+          <div class="content">
+            <ul>
+              <li>
+                <div class="author-thumb">
+                  <img src="{% static 'images/comment-author-01.jpg'%}" alt="">
+
+                </div>
+                <div class="right-content">
+                  <h4>Ram Krishna Dhakal<span>10.07.2020</span></h4>
+                  <p>I m really happy to find a job from this website. I am so thankful to the team</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="{% static 'images/comment-author-02.jpg'%}" alt="">
+
+                </div>
+                <div class="right-content">
+                  <h4>Jane Thapa<span>10.07.2020</span></h4>
+                  <p>THis is an amazing website that can change the future of Nepal.</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="{% static 'images/comment-author-03.jpg'%}" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Kate Shah<span>10.07.2020</span></h4>
+                  <p>I haven't got any reply from the Employer. However I have applied for the Job.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <br>
+          <br>
+        
+          <div class="row justify-content-md-center">
+            <div class="col-md-3">
+              <div class="main-button">
+                <a href="/testimonials">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}

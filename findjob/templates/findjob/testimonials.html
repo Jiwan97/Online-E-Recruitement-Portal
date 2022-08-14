@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+    <title>Job Finder</title>
+{% endblock%}
+
+
+{% block content %}
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>Testimonials</h4>
+                <h2>Read what people say about us!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Banner Ends Here -->
+
+
+    <div class="blog-posts">
+      <div class="container">
+        <div class="sidebar-item comments">
+          <div class="content">
+            <ul>
+              <li>
+                <div class="author-thumb">
+                  <img src="{% static 'images/comment-author-01.jpg'%}" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Ram Krishna Dhakal<span>10.07.2020</span></h4>
+                  <p>I m really happy to find a job from this website. I am so thankful to the team.</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="{% static 'images/comment-author-02.jpg'%}" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Jane Thapa<span>10.07.2020</span></h4>
+                  <p>THis is an amazing website that can change the future of Nepal</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="{% static 'images/comment-author-03.jpg'%}" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Kate Shah<span>10.07.2020</span></h4>
+                  <p>I haven't got any reply from the Employer. However I have applied for the Job.</p>
+                </div>
+              </li>
+
+              <li>
+                <div class="author-thumb">
+                  <img src="{% static 'images/comment-author-03.jpg'%}" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Jason Doe<span>10.07.2020</span></h4>
+                  <p>Fusce ornare mollis eros. Duis et diam vitae justo fringilla condimentum eu quis leo. Vestibulum id turpis porttitor sapien facilisis scelerisque. Curabitur a nisl eu lacus convallis eleifend posuere id tellus.</p>
+                </div>
+              </li>
+              <li>
+                <div class="author-thumb">
+                  <img src="{% static 'images/comment-author-03.jpg'%}" alt="">
+                </div>
+                <div class="right-content">
+                  <h4>Jane Rai<span>10.07.2020</span></h4>
+                  <p>Nullam nec pharetra nibh. Cras tortor nulla, faucibus id tincidunt in, ultrices eget ligula. Sed vitae suscipit ligula. Vestibulum id turpis volutpat, lobortis turpis ac, molestie nibh.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col-md-3">
+              <div class="main-button">
+                <a href="#">Load More</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    
+
+{% endblock %}

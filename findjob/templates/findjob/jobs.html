@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% block title %}
+    <title>Job Finder</title>
+{% endblock%}
+{% block content %}
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>Jobs</h4>
+                <h2>Choose the perfect job!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Banner Ends Here -->
+
+    <section class="blog-posts grid-system">
+      <div class="container">
+        <div class="all-blog-posts">
+          <div class="row">
+            <div class="col-md-12 col-xs-12">
+               <form class="form stw3" method="get">
+                        {{ V_filter.form }}
+                        <button class="btn btn-primary btn-sm" type="submit">Search</button>
+                    </form>
+                {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <h6 class="alert alert-success py-3 px-1 my-2 text-center">{{message}}</h6>
+                {% endif %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+                <h6 class="alert alert-danger py-3 px-1 my-2 text-center">{{message}}</h6>
+                {% endif %}
+                {% endfor %}
+              <div class="row">
+                 {% for i in vacancies %}
+                <div class="col-xl-4">
+                  <div class="blog-post">
+                    <div class="blog-thumb">
+                      <img style="height:300px;" src="{{i.pic}}" alt="">
+                    </div>
+                    <div class="down-content">
+                      <span>Salary: Rs {{i.salary}}</span>
+                      <a href="/jobform/{{i.id}}"><h4>{{i.job}}</h4></a>
+                      <p>{{i.features}}</p>
+                      <div class="post-options">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <ul class="post-tags">
+                              <li><i class="fa fa-bullseye"></i></li>
+                              <li><a href="/jobform/{{i.id}}">Apply Job</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </section>
+{% endblock %}

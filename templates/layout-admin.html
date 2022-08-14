@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fontawesome.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flex-slider.css'%}">
+<!--    <link rel="icon" href="{% static 'uploads/Screenshot_15.png' %}" type="Screenshot_15 /png "/>-->
+    <meta charset="UTF-8">
+    {% block title %}
+    {{section.title}}
+    {% endblock %}
+</head>
+<body>
+
+<div class="main">
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    {% include 'navbar-admin.html' %}
+    {% block content %}
+    {% endblock %}
+    {% include 'footer.html' %}
+</div>
+<script src="{% static 'js/jquery.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
+<script src="{% static 'js/custom.js'%}"></script>
+<script src="{% static 'js/owl.js'%}"></script>
+<script src="{% static 'js/slick.js'%}"></script>
+<script src="{% static 'js/isotope.js'%}"></script>
+<script src="{% static 'js/accordions.js'%}"></script>
+<script src="https://kit.fontawesome.com/60f8143899.js" crossorigin="anonymous"></script>
+</body>
+</html>

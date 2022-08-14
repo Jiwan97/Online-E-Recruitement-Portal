@@ -1,0 +1,60 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% load getApplicants %}
+{% block title %}
+    <title>Total Vacancy</title>
+{% endblock %}
+{% block content %}
+
+    <div class="container m-5 stw ">
+      {% for message in messages %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+      <h6 class="alert alert-success py-3 px-1 my-2 text-center">{{message}}</h6>
+      {% endif %}
+      {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}
+      <h6 class="alert alert-danger py-3 px-1 my-2 text-center">{{message}}</h6>
+      {% endif %}
+      {% endfor %}
+         <a href="/admin-dashboard" class="btn btn-info btn-sm offset-1">Back</a>
+      <a href="/admin-dashboard/addvacancy" class="btn btn-primary offset-5">Add vacancy</a>
+        <div class=" m-5 border border-4 col-lg-12">
+            <div class="card card-body">
+                    <form class="form" method="get">
+                        {{ V_filter.form }}
+                        <button class="btn btn-primary btn-sm" type="submit">Search</button>
+                    </form>
+                </div>
+            <table class="table table-hover">
+                <thead>
+                  <th>S.N.</th>
+                    <th>Jobs</th>
+                    <th>Salary</th>
+                    <th>No of vacancies</th>
+                    <th>Applicants</th>
+                    <th>Action</th>
+
+                </thead>
+                <tbody>
+                    
+                    {% for i in totvac  %}
+                    <tr>
+                      <td>{{forloop.counter}}</td>
+                    <td>{{i.job|truncatechars:25}}</td>
+                    <td>{{i.salary}}</td>
+                    <td>{{i.totalVacancy}}</td>
+                    <td>{{i.id|getApplicants}}</td>
+                    <td>
+                      <a href="/admin-dashboard/editvacancy/{{i.id}}" class="btn btn-outline-primary btn-sm">Edit</a>
+                      <a href="/admin-dashboard/deletevacancy/{{i.id}}" class="btn btn-danger btn-sm" onclick="return confirm('Want to delete?')">Delete</a>
+                    </td>
+                
+                    </tr>
+                    {% endfor %}
+                    
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+{%endblock%}
